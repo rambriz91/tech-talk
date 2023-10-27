@@ -1,0 +1,20 @@
+:root {
+  --robin-egg: rgb(130, 171, 172);
+  --azure: rgb(218, 244, 244);
+}
+
+body {
+  background-color: var(--robin-egg);
+}
+
+#login-container,
+#signup-container {
+  background-color: var(--azure);
+  padding: 16px;
+  border-radius: 2%;
+  box-shadow: 0 0.5rem 1rem;
+}
+
+.archivo {
+  font-family: 'Archivo Black', sans-serif;
+}
