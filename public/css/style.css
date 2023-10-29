@@ -1,6 +1,18 @@
 :root {
   --robin-egg: rgb(130, 171, 172);
   --azure: rgb(218, 244, 244);
+  --whisp: rgb(243, 250, 250);
+  --gray: rgb(109, 135, 135);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  color: var(--azure);
+  text-decoration: none;
 }
 
 body {
@@ -17,4 +29,17 @@ body {
 
 .archivo {
   font-family: 'Archivo Black', sans-serif;
+}
+
+.post-container {
+  background-color: var(--azure);
+}
+
+.post-card {
+  background-color: var(--whisp);
+}
+
+.post-highlight {
+  background-color: var(--gray);
+  color: var(--whisp);
 }
