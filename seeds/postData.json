@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Using Sequelize",
+    "content": "To start the user will need to have mysql installed on their computer. The user must then install the dependenices.... blah blah blah.",
+    "createdOn": "2023-10-25",
+    "poster_id": 1
+  },
+  {
+    "title": "Date Datatypes",
+    "content": "A date and time combination. Format: YYYY-MM-DD hh:mm:ss. The supported range is from '1000-01-01 00:00:00' to '9999-12-31 23:59:59'. Adding DEFAULT and ON UPDATE in the column definition to get automatic initialization and updating to the current date and time.",
+    "createdOn": "2023-10-27",
+    "poster_id": 2
+  },
+  {
+    "title": "SQL Data Types",
+    "content": "An SQL developer must decide what type of data that will be stored inside each column when creating a table. The data type is a guideline for SQL to understand what type of data is expected inside of each column, and it also identifies how SQL will interact with the stored data.",
+    "createdOn": "2023-10-28",
+    "poster_id": 3
+  }
+]

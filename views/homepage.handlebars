@@ -4,13 +4,19 @@
     <h2 class='archivo mb-3'>Today's Tech Talk</h2>
   </div>
   <div class='post-container p-3'>
-    <a href=''>
-      <div class='post-card col-12 p-1'>
-        <h3 class='post-highlight text-center p-1'>Title</h3>
-        <p class='p-3'>Content</p>
-        <p class='post-highlight text-end'>Posted by </p>
-      </div>
-    </a>
+    {{#each posts as |post|}}
+      <a href='/post{{post.id}}'>
+        <div class='post-card col-12 p-1'>
+          <h3 class='post-highlight text-center p-1'>{{post.title}}</h3>
+          <p class='p-3'>{{post.content}}</p>
+          <p class='post-highlight text-end'>Posted by
+            {{post.user.name}}
+            on
+            {{post.createdOn}}
+          </p>
+        </div>
+      </a>
+    {{/each}}
   </div>
 
 </div>

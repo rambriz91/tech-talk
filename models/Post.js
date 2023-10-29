@@ -16,8 +16,11 @@ Post.init(
       allowNull: false,
     },
     content: {
-      type: DataTypes.STRING,
+      type: DataTypes.BLOB,
       allowNull: false,
+      validate: {
+        len: [5, 1000],
+      },
     },
     createdOn: {
       type: DataTypes.DATE,
