@@ -9,6 +9,13 @@
         {{createdOn}}
       </p>
     </div>
-    <button class='btn btn-primary'>Add Comment</button>
+    <form action=''>
+      <input id='comment-input' type='text' />
+      <input type='hidden' id='post-id' value='{{id}}' />
+      <button id='comment-btn' class='btn btn-primary'>Add Comment</button>
+    </form>
+
   </div>
 </div>
+
+<script src='/js/post.js'></script>

@@ -27,6 +27,13 @@ body {
   box-shadow: 0 0.5rem 1rem;
 }
 
+#comment-input {
+  height: 100px;
+  width: 75%;
+  margin-bottom: 1%;
+  display: block;
+}
+
 .archivo {
   font-family: 'Archivo Black', sans-serif;
 }
