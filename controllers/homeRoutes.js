@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const withAuth = require('../utils/auth');
-const { Post, User } = require('../models');
+const { Post, User, Comment } = require('../models');
 
 //homepage displays all tech blog posts and user info.
 router.get('/', withAuth, async (req, res) => {
@@ -32,15 +32,29 @@ router.get('/post/:id', withAuth, async (req, res) => {
           model: User,
           attributes: ['id', 'name'],
         },
+        {
+          model: Comment,
+          attributes: ['content', 'createdOn', 'commenter_id'],
+          include: [
+            {
+              model: User,
+              attributes: ['name'],
+            },
+          ],
+        },
       ],
     });
 
     const post = postData.get({ plain: true });
     const posterName = post.user.name;
+    const commenterName = post.comments.map((comment) => comment.user.name);
+    console.log(post);
+    console.log(commenterName);
 
     res.render('post', {
       ...post,
       posterName,
+      commenterName,
       user: req.session.user,
       logged_in: req.session.logged_in,
     });
