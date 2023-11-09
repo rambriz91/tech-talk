@@ -13,4 +13,11 @@ const logout = async () => {
   }
 };
 
+const dashboardHandler = async () => {
+  document.location.replace('/dashboard');
+};
+
+document
+  .querySelector('#dashboard')
+  .addEventListener('click', dashboardHandler);
 document.querySelector('#logout').addEventListener('click', logout);

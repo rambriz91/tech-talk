@@ -47,14 +47,11 @@ router.get('/post/:id', withAuth, async (req, res) => {
 
     const post = postData.get({ plain: true });
     const posterName = post.user.name;
-    const commenterName = post.comments.map((comment) => comment.user.name);
     console.log(post);
-    console.log(commenterName);
 
     res.render('post', {
       ...post,
       posterName,
-      commenterName,
       user: req.session.user,
       logged_in: req.session.logged_in,
     });
@@ -75,6 +72,28 @@ router.get('/login', (req, res) => {
 //route for sign-up
 router.get('/sign-up', async (req, res) => {
   res.render('signup');
+});
+
+//route for dashboard
+router.get('/dashboard', withAuth, async (req, res) => {
+  const userPostData = await User.findOne({
+    where: {
+      id: req.session.user.id,
+    },
+    include: [
+      {
+        model: Post,
+        attributes: ['id', 'title', 'content', 'createdOn', 'poster_id'],
+      },
+    ],
+  });
+
+  const userPosts = userPostData.get({ plain: true });
+  res.render('dashboard', {
+    ...userPosts,
+    user: req.session.user,
+    logged_in: req.session.logged_in,
+  });
 });
 
 module.exports = router;

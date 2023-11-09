@@ -12,7 +12,10 @@
     {{#each comments as |comment|}}
       <div class='bubble'>
         <p class='p-1'>{{comment.content}}</p>
-        <p class='p-1'>{{comment.createdOn}}</p>
+        <p class='p-1'>Posted by
+          {{comment.user.name}}
+          on
+          {{comment.createdOn}}</p>
       </div>
     {{/each}}
     <form action=''>
