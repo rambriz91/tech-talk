@@ -17,6 +17,12 @@ const dashboardHandler = async () => {
   document.location.replace('/dashboard');
 };
 
+const homeBtnHandler = async () => {
+  document.location.replace('/');
+};
+
+document.querySelector('#home').addEventListener('click', homeBtnHandler);
+
 document
   .querySelector('#dashboard')
   .addEventListener('click', dashboardHandler);

@@ -35,6 +35,16 @@ body {
   display: block;
 }
 
+#content-input {
+  height: 100%;
+}
+
+#new-post-btn {
+  background-color: var(--leaf);
+  color: black;
+  margin-top: 1%;
+}
+
 .archivo {
   font-family: 'Archivo Black', sans-serif;
 }
