@@ -96,7 +96,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
   });
 });
 
-router.get('/newpost', withAuth, async (req, res) => {
+router.get('/post', withAuth, async (req, res) => {
   try {
     res.render('newpost', {
       user: req.session.user,
