@@ -16,7 +16,7 @@ router.post('/', async (req, res) => {
   }
 });
 
-router.delete('/delete/:id', withAuth, async (req, res) => {
+router.delete('/delete/:id', async (req, res) => {
   try {
     const deletedPostData = await Post.destroy({
       where: {
@@ -32,7 +32,7 @@ router.delete('/delete/:id', withAuth, async (req, res) => {
   }
 });
 
-router.put('/update/:id', withAuth, async (req, res) => {
+router.put('/update/:id', async (req, res) => {
   try {
     const postData = await Post.update(
       {

@@ -9,6 +9,12 @@
         {{createdOn}}
       </p>
     </div>
+    {{#if (eq posterId UserId)}}
+      <div class='m-2'>
+        <button id='update-btn' class='btn btn-primary'>Update</button>
+        <button id='delete-btn' class='btn btn-danger'>Delete</button>
+      </div>
+    {{/if}}
     {{#each comments as |comment|}}
       <div class='bubble'>
         <p class='p-1'>{{comment.content}}</p>

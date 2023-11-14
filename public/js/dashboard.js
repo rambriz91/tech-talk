@@ -1,5 +1,5 @@
 const newPostHandler = async () => {
-  document.location.replace('/newpost');
+  document.location.replace('/post');
 };
 
 document
