@@ -50,8 +50,6 @@ router.get('/post/:id', withAuth, async (req, res) => {
     const posterId = post.poster_id;
     const UserId = req.session.user.id;
     console.log(post);
-    console.log('user id:', posterId);
-    console.log('Poster_id:', UserId);
 
     res.render('post', {
       ...post,
